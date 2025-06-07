@@ -186,6 +186,7 @@ h1{
     overflow: hidden;
 }
 
+
 /* Mobile Responsiveness (max-width: 768px) */
 @media (max-width: 768px) {
     nav, footer {

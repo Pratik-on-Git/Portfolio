@@ -70,9 +70,9 @@ position: absolute;
 .links{
     display: flex;
     gap: 2em;
-    padding: 1em;
-        border-radius: 8px;
-        backdrop-filter: blur(3px);
+    padding: 0.8em;
+    border-radius: 1em;
+    backdrop-filter: blur(3px);
 }
 
 .logo, .link, footer p{
@@ -179,26 +179,6 @@ h1{
     text-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Better visibility */
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 /* Mobile Responsiveness (max-width: 768px) */
 @media (max-width: 768px) {
     nav, footer {
@@ -212,7 +192,6 @@ h1{
         align-items: flex-end;
         gap: 1em;
         padding: 1em;
-        border-radius: 8px;
         backdrop-filter: blur(3px);
     }
 

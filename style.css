@@ -94,10 +94,12 @@ a, p{
 .tagline {
     width: 50%;
     left: 50%;
-    bottom: 2em;
+    bottom: 3.2em;
     transform: translateX(-50%);
     position: absolute;
     text-align: center;
+    font-family: "Hanken Grotesk", sans-serif;
+    
 }
 
 .hero-video{
@@ -135,7 +137,7 @@ h1{
     font-size: 9rem;
     font-weight: 600;
     line-height: 100%;
-    color: #006cff;
+    color: #0004ff;
 }
 
 .header{
@@ -175,15 +177,21 @@ h1{
 .counter h4{
     position: relative;
     font-size: 30px;
-    color: #006cff; 
+    color: #0004ff
     line-height: 120%;
     font-family: "Hanken Grotesk", sans-serif;
     font-weight: 400;
     text-shadow: 0 2px 5px rgba(0,0,0,0.2); /* Better visibility */
 }
 
-.moving-div{
-    background-color: #006cff;
+.moving-div {
+    background-color: #0004ff;
+    display: flex;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.moving-div-reverse {
+    background-color: #f8f8ff;
     display: flex;
     white-space: nowrap;
     overflow: hidden;
@@ -197,10 +205,22 @@ h1{
     font-weight: 100;
     align-items: center;
     justify-content: center;
-    animation: identifier 10s linear infinite;
+    animation: identifier 10s linear infinite reverse;
      will-change: transform;
 }
 
+.moving-div-reverse .move{
+    font-family: "Hanken Grotesk", sans-serif;
+    display: flex;
+    font-size: 3em;
+    gap: 0.5em;
+    color: #0004ff;
+    font-weight: 100;
+    align-items: center;
+    justify-content: center;
+    animation: identifier 10s linear infinite;
+     will-change: transform;
+}
 @keyframes identifier {
     0% {
         transform: translateX(0);
@@ -234,21 +254,21 @@ h1{
 }
 
 #hero-1 {
-    background-color: #0004ffb7;
+    background-color: #0004ff;
     border-radius: 50%;
     filter: blur(35px);
     animation: anime1 5s linear infinite alternate;
 }
 
 #hero-2 {
-    background: linear-gradient(#006cff, #0026ff);
+    background: linear-gradient(#006cff, #0004ff);
     border-radius: 50%;
     filter: blur(35px);
     animation: anime2 5s linear infinite alternate;
 }
 
 #hero-3 {
-    background: linear-gradient(#0026ff, #006cff);
+    background: linear-gradient(#4400ff, #006cff);
     border-radius: 50%;
     filter: blur(35px);
     animation: anime1 5s linear infinite alternate;

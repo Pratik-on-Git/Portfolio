@@ -1,6 +1,12 @@
+
+
+
 // Initialize variables
         const isMobile = window.innerWidth <= 768;
-        const movements = [-100, 80, 0, -120, 70, -50];
+        
+        // Enhanced movements arrays for both X and Y axes
+        const movementsY = [-100, 80, 0, -120, 70, -50];
+        const movementsX = [-20, -50, 0, 30, 10, 30]; // New X-axis movements
         
         // Immediately lock the scroll
         document.body.style.overflow = 'hidden';
@@ -15,7 +21,7 @@
             document.body.style.touchAction = '';
             document.body.style.position = '';
             document.body.classList.remove('no-scroll');
-        }, 7000);
+        }, 8000);
         
         // GSAP Animation Timeline
         const t1 = gsap.timeline({ delay: 1.3 });
@@ -116,11 +122,14 @@
             ease: "power2.inOut"
         }, "+=0.2");
         
-        // Scatter animation
-        movements.forEach((move, index) => {
+        // Enhanced scatter animation with X-axis movement
+        movementsY.forEach((moveY, index) => {
+            const moveX = movementsX[index]; // Get corresponding X movement
+            
             t1.to(`.h-${index + 1}`, {
-                y: isMobile ? move * 0.6 : move,
-                duration: 0.5,
+                x: isMobile ? moveX * 0.6 : moveX,
+                y: isMobile ? moveY * 0.6 : moveY,
+                duration: 0.7,
                 ease: "elastic.out(1, 0.5)"
             }, "<");
         });
@@ -144,7 +153,7 @@
             initScrollEffects();
         });
         
-        // Enhanced Parallax
+        // Enhanced Parallax with X-axis movement
         function initParallax() {
             const h1Letters = document.querySelectorAll('.h-1, .h-2, .h-3, .h-4, .h-5, .h-6');
             if (h1Letters.length === 0) return;
@@ -179,10 +188,11 @@
         
                 h1Letters.forEach((el, i) => {
                     const strength = isMobile ? (1 + i * 0.3) : (3 + i * 0.7);
-                    const originalY = movements[i] * (isMobile ? 0.6 : 1);
+                    const originalY = movementsY[i] * (isMobile ? 0.6 : 1);
+                    const originalX = movementsX[i] * (isMobile ? 0.6 : 1);
                     
                     gsap.set(el, {
-                        x: currentX * strength,
+                        x: originalX + (currentX * strength),
                         y: originalY + (currentY * strength),
                     });
                 });
@@ -282,3 +292,6 @@
         document.addEventListener('gesturestart', (e) => {
             e.preventDefault();
         });
+
+
+

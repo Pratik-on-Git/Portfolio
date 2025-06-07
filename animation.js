@@ -75,7 +75,7 @@
         })
         .to(".counter h4", { 
             y: -105, 
-            duration: 0.4, 
+            duration: 0.3, 
             ease: "elastic.out(1, 0.5)",
             delay: 0.5
         });
@@ -292,6 +292,50 @@
         document.addEventListener('gesturestart', (e) => {
             e.preventDefault();
         });
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+document.addEventListener("DOMContentLoaded", function() {
+    // Initial setup - start elements off-screen
+    gsap.set("#description-about-me", { y: 80, opacity: 0, filter: "blur(5px)" });
+    gsap.set("#bottom-part2", { y: 80, opacity: 0, filter: "blur(5px)" });
+    gsap.set("#bottom-part2 img", { scale: 0.9, opacity: 0 });
+
+    // Create timeline
+    const aboutTimeline = gsap.timeline({
+        scrollTrigger: {
+            trigger: "#description-about-me",
+            start: "top 75%",
+            toggleActions: "play none none none",
+            markers: false // Set to true for debugging
+        }
+    });
+
+    // Animate elements with glass effect enhancement
+    aboutTimeline
+        .to("#description-about-me", {
+            y: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+            duration: 0.8,
+            ease: "power3.out"
+        })
+        .to("#bottom-part2", {
+            y: 0,
+            opacity: 1,
+            filter: "blur(0px)",
+            duration: 0.8,
+            ease: "power3.out"
+        }, "-=0.4")
+        .to("#bottom-part2 img", {
+            scale: 1,
+            opacity: 1,
+            duration: 1.2,
+            ease: "elastic.out(1, 0.5)"
+        }, "-=0.6");
+});
 
 
 

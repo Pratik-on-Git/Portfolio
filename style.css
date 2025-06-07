@@ -177,7 +177,7 @@ h1{
 .counter h4{
     position: relative;
     font-size: 30px;
-    color: #0004ff
+    color: #0004ff;
     line-height: 120%;
     font-family: "Hanken Grotesk", sans-serif;
     font-weight: 400;
@@ -243,14 +243,16 @@ h1{
     justify-content: center;
     align-items: center;
     pointer-events: none; /* Allows clicks to pass through */
-    z-index: 1; /* Adjust based on your stacking needs */
+    padding: 8em;
     background-color: #010100;
+    color: #f8f8ff;
 }
 
 #hero-1, #hero-2, #hero-3 {
     position: absolute;
     height: 30vw;
     width: 30vw;
+    z-index: -999999; /* Adjust based on your stacking needs */
 }
 
 #hero-1 {
@@ -283,6 +285,67 @@ h1{
     from { transform: translate(5%, -5%); }
     to { transform: translate(-30%, 20%); }
 }
+
+#skill-box{
+    display: flex;
+    flex-direction: row;
+    gap: 5vw;
+}
+.skill-top h4{
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 1.1em;
+    color: #f8f8ff;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-bottom: 2vw;
+    text-decoration: underline;
+}
+.skill h4{
+    font-family: "Hanken Grotesk", sans-serif;
+    font-size: 1em;
+    color: #f8f8ff;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+
+#description-skills{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 10vh
+}
+
+#description-skills #description-about-me {
+    font-family: "Hanken Grotesk", sans-serif;
+    color: #f8f8ff;
+    font-size: 3em;
+    font-weight: 400;
+    line-height: 4vw;
+}
+
+#bottom-part2 {
+    width: 35%;
+    padding-top: 22vh;
+}
+
+#bottom-part2 img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+#bottom-part2 p {
+    font-weight: 200;
+    margin-top: 2vw;
+    font-size: 1vw;
+    text-transform: capitalize;
+}
+
+
+
+
+
+
 
 
 

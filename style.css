@@ -454,4 +454,28 @@ h1{
     from { transform: translate(5%, -5%); }
     to { transform: translate(-30%, 20%); }
 }
+
+#hero-shape {
+    padding: 2.5em;
+    flex-direction: column;
+    height: auto;
+}
+
+#description-skills {
+    padding-bottom: 3vh;
+}
+
+#description-skills #description-about-me {
+    font-size: 2.4em;
+    line-height: 10vw;
+}
+
+#bottom-part2 {
+    width: auto;
+    padding-top: 0%;
+}
+
+#bottom-part2 p{
+    font-size: 4vw;
+}
 }

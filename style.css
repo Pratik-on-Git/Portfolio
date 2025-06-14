@@ -18,7 +18,7 @@ body.no-scroll {
   height: 100%;
 }
 
-.div{
+.main-div{
     position: relative;
 }
 /* Custom Scrollbar */
@@ -330,7 +330,9 @@ h1{
 }
 
 #bottom-part2 img {
-    width: 100%;
+    width: 80%;
+    object-fit: cover;
+    aspect-ratio: 3 / 2;
     border-radius: 10px;
 }
 
